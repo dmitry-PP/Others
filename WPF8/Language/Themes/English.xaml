@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="Role">Choose Role</v:String>
+    <v:String x:Key="Play">Pass the test</v:String>
+    <v:String x:Key="Change">Change the test</v:String>
+    <v:String x:Key="Exit">Exit</v:String>
+    
+    <v:String x:Key="Name">Name</v:String>
+    <v:String x:Key="Description">Description</v:String>
+    <v:String x:Key="AnswerOne">Answer One</v:String>
+    <v:String x:Key="AnswerTwo">Answer Two</v:String>
+    <v:String x:Key="AnswerThree">Answer Three</v:String>
+    <v:String x:Key="TrueAnswer">True Answer</v:String>
+    <v:String x:Key="RightAnswers">Right Answers</v:String>
+
+    <v:String x:Key="Label1">No existing tests were found.</v:String>
+    <v:String x:Key="Label2">In order for them to appear, create them)</v:String>
+
+</ResourceDictionary>

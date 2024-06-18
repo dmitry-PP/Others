@@ -1,0 +1,9 @@
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\obj\Debug\ClassLibrary.csproj.CopyComplete
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\ClassLibrary\obj\Debug\ClassLibrary.pdb

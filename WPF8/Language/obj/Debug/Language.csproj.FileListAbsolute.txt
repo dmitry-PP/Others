@@ -1,0 +1,13 @@
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\bin\Debug\Language.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\bin\Debug\Language.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.csproj.AssemblyReference.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\FullDictionary.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Themes\English.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Themes\Russia.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language_MarkupCompile.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.g.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.Properties.Resources.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.csproj.GenerateResource.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.csproj.CoreCompileInputs.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\C#\3семестр\Language\obj\Debug\Language.pdb

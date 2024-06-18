@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="switcher" Height="35" Width="55" Content="ru" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" Click="switch_Click"/>
+        <TextBlock Text="{DynamicResource Role}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Grid.Row="1"/>
+        <Button x:Name="play" Content="{DynamicResource Play}" Grid.Row="2" Margin="15,0,15,0" FontSize="20" Click="play_Click" Height="60" Padding="16,4,16,15"/>
+        <Button x:Name="change" Content="{DynamicResource Change}"  Grid.Row="4" Margin="15,0,15,0" FontSize="20" Click="change_Click" Height="60" Padding="16,4,16,15"/>
+        <TextBox x:Name="auth" Grid.Row="6" Visibility="Collapsed" TextChanged="auth_TextChanged" Width="200" Margin="0,0,0,10" />
+    </Grid>
+</Window>
