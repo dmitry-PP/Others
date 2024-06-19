@@ -1,0 +1,118 @@
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\libHarfBuzzSharp.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\x86\libHarfBuzzSharp.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\x64\libHarfBuzzSharp.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\arm64\libHarfBuzzSharp.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\libHarfBuzzSharp.dylib
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\WpfApp1.exe.config
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\WpfApp1.exe
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\WpfApp1.pdb
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\HarfBuzzSharp.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\Spire.Doc.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\Spire.XLS.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Buffers.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Memory.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\HarfBuzzSharp.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\Spire.Doc.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\Spire.XLS.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Buffers.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Memory.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\MainWindow.g.cs
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\App.g.cs
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\MainWindow.baml
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.g.resources
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.csproj.Up2Date
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.exe
+D:\Учёба\C#\2-ой Семестр\Практическая N9\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\x86\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\x64\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\arm64\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\libHarfBuzzSharp.dylib
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\HarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\Spire.Doc.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\Spire.XLS.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Buffers.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Memory.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\HarfBuzzSharp.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\Spire.Doc.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\Spire.XLS.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Buffers.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Memory.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\ExcelWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WordWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\ExcelWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp1\obj\Debug\WordWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\x86\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\x64\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\arm64\libHarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\libHarfBuzzSharp.dylib
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\WpfApp1.exe.config
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\WpfApp1.exe
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\WpfApp1.pdb
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\HarfBuzzSharp.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\Spire.Doc.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\Spire.XLS.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Buffers.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Memory.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\HarfBuzzSharp.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\Spire.Doc.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\Spire.XLS.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Buffers.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Memory.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\EmailWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\ExcelWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\MainWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WordWindow.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\App.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\ExcelWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\MainWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WordWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\EmailWindow.baml
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.g.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.exe
+C:\Users\Dmitr\OneDrive\Рабочий стол\Мусорка\WpfApp9\obj\Debug\WpfApp1.pdb

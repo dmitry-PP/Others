@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfApp1.WordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WordWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ToolBar Margin="0,0,0,3">
+            <Button Command="Cut" Content="Cut" />
+            <Button Command="Copy" Content="Copy" />
+            <Button Command="Paste" Content="Paste" />
+            <Separator />
+            <Button Command="Undo" Content="Undo" />
+            <Button Command="Redo" Content="Redo" />
+            <Separator />
+            <Button Command="ToggleBold" Content="Bold" />
+            <Button Command="ToggleItalic" Content="Italic" />
+            <Button Command="ToggleUnderline" Content="Underline" />
+            <Separator />
+            <Button Command="IncreaseFontSize" Content="Increase Font Size" />
+            <Button Command="DecreaseFontSize" Content="Decrease Font Size" />
+            <Separator />
+            <Button Command="AlignLeft" Content="Align Left" />
+            <Button Command="AlignCenter" Content="Align Center" />
+            <Button Command="AlignRight" Content="Align Right" />
+            <Button Command="AlignJustify" Content="Align Justify" />
+            <Separator />
+            <Button Command="IncreaseIndentation" Content="Increase Indentation" />
+            <Button Command="DecreaseIndentation" Content="Decrease Indentation" />
+        </ToolBar>
+        <RichTextBox x:Name="content" VerticalContentAlignment="Top" Margin="0,2,0,1" Grid.Row="1" >
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+        <Button Content="Отправить по почте" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="800" Height="25" Click="Send" Grid.Row="2" />
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="0,29,0,0" VerticalAlignment="Top" Width="800" Height="25" Click="Save" Grid.Row="2" />
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.EmailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="EmailWindow" Height="250" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Логин:" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="login" Grid.Row="0" Width="400"  Grid.Column="1"/>
+
+        <Label Content="Пароль:" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="pwd" Width="400" Grid.Row="1" Grid.Column="1"/>
+
+        <Label Content="Кому:" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="to" Width="400" Grid.Row="2" Grid.Column="1"/>
+
+        <Label Content="Тема:" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="theme" Width="400" Grid.Column="1" Grid.Row="3"/>
+
+        <Button Grid.Row="4" Content="Отправить" Click="Send" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Window>
