@@ -1,0 +1,236 @@
+
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+<link rel="stylesheet" href="{% static 'products/css/all_goods.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Все товары</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="products-filter">
+        <div class="filter-group">
+            <label>Сортировать:</label>
+            <select>
+                <option>По популярности</option>
+                <option>По возрастанию цены</option>
+                <option>По убыванию цены</option>
+                <option>По новизне</option>
+            </select>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Поиск товаров...">
+        </div>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812388d1f4');"></div>
+            <div class="product-info">
+                <h3>Яблоки Гала</h3>
+                <p>Сочные сладкие яблоки, 1 кг</p>
+                <span class="price">120 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb');"></div>
+            <div class="product-info">
+                <h3>Авокадо Хасс</h3>
+                <p>Спелые авокадо, 1 шт</p>
+                <span class="price">200 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716');"></div>
+            <div class="product-info">
+                <h3>Помидоры черри</h3>
+                <p>Свежие, 250 г</p>
+                <span class="price">180 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff');"></div>
+            <div class="product-info">
+                <h3>Молоко 3.2%</h3>
+                <p>Свежее пастеризованное, 1 л</p>
+                <span class="price">85 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1550583724-b2692b85b150');"></div>
+            <div class="product-info">
+                <h3>Сыр Гауда</h3>
+                <p>Нарезка, 200 г</p>
+                <span class="price">220 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1603048719537-93e55a8b8f0a');"></div>
+            <div class="product-info">
+                <h3>Куриное филе</h3>
+                <p>Свежее охлажденное, 1 кг</p>
+                <span class="price">350 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655');"></div>
+            <div class="product-info">
+                <h3>Хлеб цельнозерновой</h3>
+                <p>Свежий хлеб, 500 г</p>
+                <span class="price">65 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a');"></div>
+            <div class="product-info">
+                <h3>Минеральная вода</h3>
+                <p>Газированная, 1 л</p>
+                <span class="price">60 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999');"></div>
+            <div class="product-info">
+                <h3>Рис басмати</h3>
+                <p>Высококачественный, 1 кг</p>
+                <span class="price">150 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1615485925606-972d4b75a736');"></div>
+            <div class="product-info">
+                <h3>Огурцы</h3>
+                <p>Свежие, 1 кг</p>
+                <span class="price">90 ₽</span>
+                <div class="product-meta">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">»</a>
+    </div>
+</div>
+{% endblock content %}

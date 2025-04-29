@@ -1,0 +1,75 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+<link rel="stylesheet" href="{% static 'products/css/category.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Категории товаров</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="categories-grid">
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812388d1f4');"></div>
+            <div class="category-info">
+                <h3>Фрукты</h3>
+                <a href="products.html?category=fruits" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716');"></div>
+            <div class="category-info">
+                <h3>Овощи</h3>
+                <a href="products.html?category=vegetables" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff');"></div>
+            <div class="category-info">
+                <h3>Молочные продукты</h3>
+                <a href="products.html?category=dairy" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1603048719537-93e55a8b8f0a');"></div>
+            <div class="category-info">
+                <h3>Мясо и птица</h3>
+                <a href="products.html?category=meat" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1540420773420-3366772f4999');"></div>
+            <div class="category-info">
+                <h3>Бакалея</h3>
+                <a href="products.html?category=groceries" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a');"></div>
+            <div class="category-info">
+                <h3>Напитки</h3>
+                <a href="products.html?category=drinks" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <div class="category-img"
+                 style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655');"></div>
+            <div class="category-info">
+                <h3>Хлеб и выпечка</h3>
+                <a href="products.html?category=bakery" class="btn">Посмотреть товары</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+<link rel="stylesheet" href="{% static 'products/css/find.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Как нас найти</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="location-container">
+        <div class="location-info">
+            <h2>Наш адрес</h2>
+
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-text">
+                    <h3>Адрес</h3>
+                    <p>г. Москва, ул. Продовольственная, д. 15, офис 42</p>
+                </div>
+            </div>
+
+            <div class="location-item">
+                <div class="location-icon">
+                    <i class="fas fa-subway"></i>
+                </div>
+                <div class="location-text">
+                    <h3>Как добраться</h3>
+                    <p>Ближайшая станция метро: Продовольственная (10 минут пешком)</p>
+                </div>
+            </div>
+
+            <div class="working-hours">
+                <h3>Часы работы</h3>
+                <table class="hours-table">
+                    <tr>
+                        <td>Понедельник - Пятница</td>
+                        <td>9:00 - 21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Суббота</td>
+                        <td>10:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Воскресенье</td>
+                        <td>10:00 - 18:00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="location-map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock content %}

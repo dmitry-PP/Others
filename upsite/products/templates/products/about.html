@@ -1,0 +1,77 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+    <link rel="stylesheet" href="{% static 'products/css/about.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>О нашей компании</h1>
+        <ul class="breadcrumbs">
+            <li><a href="index.html">Контакты</a></li>
+            <li><a href="about.html">О компании</a></li>
+        </ul>
+    </div>
+</section>
+
+<div class="container">
+    <section class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150" alt="Наш магазин">
+        </div>
+        <div class="about-content">
+            <h2>Наша история</h2>
+            <p>FreshMarket был основан в 2010 году с целью предоставления свежих и качественных продуктов питания по
+                доступным ценам. Начиная с небольшого магазина в центре города, мы выросли в сеть супермаркетов,
+                обслуживающих тысячи довольных клиентов ежедневно.</p>
+            <p>Наша философия проста - только свежие продукты от проверенных поставщиков. Мы тщательно отбираем каждого
+                партнера, чтобы гарантировать качество всего ассортимента.</p>
+            <p>Сегодня FreshMarket - это не просто магазин, а целая экосистема здорового питания, включающая собственные
+                фермерские хозяйства, службу доставки и кулинарную школу.</p>
+            <a href="{% url 'contact' %}" class="btn">Связаться с нами</a>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="mission-card">
+            <h3><i class="fas fa-bullseye"></i> Наша миссия</h3>
+            <p>Обеспечивать наших клиентов самыми свежими и полезными продуктами, способствуя здоровому образу жизни и
+                заботе об окружающей среде. Мы стремимся сделать качественное питание доступным для каждого.</p>
+        </div>
+        <div class="vision-card">
+            <h3><i class="fas fa-eye"></i> Наше видение</h3>
+            <p>Стать лидером рынка здорового питания, внедряя инновационные технологии в производство и доставку
+                продуктов. Мы хотим изменить культуру потребления, делая акцент на качестве, а не количестве.</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>Наша команда</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Алексей Петров">
+                <div class="team-member-info">
+                    <h3>Алексей Петров</h3>
+                    <p>Основатель и CEO</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Мария Иванова">
+                <div class="team-member-info">
+                    <h3>Мария Иванова</h3>
+                    <p>Директор по закупкам</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72" alt="Дмитрий Смирнов">
+                <div class="team-member-info">
+                    <h3>Дмитрий Смирнов</h3>
+                    <p>Шеф-технолог</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

@@ -1,0 +1,82 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+    <link rel="stylesheet" href="{% static 'products/css/index.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Свежие продукты с доставкой</h1>
+        <p>Мы предлагаем только самые свежие и качественные продукты от проверенных поставщиков</p>
+        <a href="{% url 'goods' %}" class="btn">Перейти к покупкам</a>
+    </div>
+</section>
+
+<div class="container">
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-truck"></i>
+            <h3>Быстрая доставка</h3>
+            <p>Доставляем заказы в течение 2 часов по городу</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Экологично</h3>
+            <p>Все продукты выращены без вредных добавок</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-percent"></i>
+            <h3>Выгодные цены</h3>
+            <p>Постоянные акции и скидки для наших клиентов</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2 class="section-title">Популярные товары</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812388d1f4');"></div>
+                <div class="product-info">
+                    <h3>Свежие яблоки</h3>
+                    <p>Сочные яблоки сорта Гала</p>
+                    <span class="price">120 ₽/кг</span>
+                    <a href="#" class="btn">В корзину</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb');"></div>
+                <div class="product-info">
+                    <h3>Авокадо</h3>
+                    <p>Спелые авокадо из Израиля</p>
+                    <span class="price">200 ₽/шт</span>
+                    <a href="#" class="btn">В корзину</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff');"></div>
+                <div class="product-info">
+                    <h3>Молоко</h3>
+                    <p>Свежее молоко 3.2%</p>
+                    <span class="price">85 ₽/л</span>
+                    <a href="#" class="btn">В корзину</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655');"></div>
+                <div class="product-info">
+                    <h3>Хлеб</h3>
+                    <p>Свежий цельнозерновой хлеб</p>
+                    <span class="price">65 ₽/шт</span>
+                    <a href="#" class="btn">В корзину</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content%}

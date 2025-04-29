@@ -1,0 +1,97 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+{% block extra_options %}
+    <link rel="stylesheet" href="{% static 'products/css/cart.css' %}">
+{% endblock extra_options%}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1>Ваша корзина</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="cart-container">
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812388d1f4');"></div>
+                <div class="cart-item-info">
+                    <h3>Яблоки Гала</h3>
+                    <p>Сочные сладкие яблоки, 1 кг</p>
+                    <span class="cart-item-price">120 ₽</span>
+                </div>
+                <div class="cart-item-controls">
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="2" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Удалить
+                    </button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb');"></div>
+                <div class="cart-item-info">
+                    <h3>Авокадо Хасс</h3>
+                    <p>Спелые авокадо, 1 шт</p>
+                    <span class="cart-item-price">200 ₽</span>
+                </div>
+                <div class="cart-item-controls">
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Удалить
+                    </button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img"
+                     style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655');"></div>
+                <div class="cart-item-info">
+                    <h3>Хлеб цельнозерновой</h3>
+                    <p>Свежий хлеб, 500 г</p>
+                    <span class="cart-item-price">65 ₽</span>
+                </div>
+                <div class="cart-item-controls">
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Удалить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <h3 class="summary-title">Итого</h3>
+            <div class="summary-row">
+                <span>Товары (4)</span>
+                <span>505 ₽</span>
+            </div>
+            <div class="summary-row">
+                <span>Доставка</span>
+                <span>Бесплатно</span>
+            </div>
+            <div class="summary-row summary-total">
+                <span>К оплате</span>
+                <span>505 ₽</span>
+            </div>
+            <button class="btn">Оформить заказ</button>
+            <a href="products.html" class="btn btn-outline">Продолжить покупки</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
