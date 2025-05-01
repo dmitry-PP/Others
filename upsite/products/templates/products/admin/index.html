@@ -1,0 +1,126 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block extra_styles %}
+<style>
+
+
+        .page-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-card i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-card h2 {
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+
+        .dashboard-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+
+
+</style>
+{% endblock extra_styles%}
+
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Управление базой данных</h1>
+        <p>Просмотр и редактирование данных системы</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="dashboard">
+        <div class="dashboard-card">
+            <i class="fas fa-list-alt"></i>
+            <h2>Категории</h2>
+            <p>Управление категориями товаров</p>
+            <a href="{% url 'category_list' %}" class="btn">Перейти</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-ruler-combined"></i>
+            <h2>Единицы измерения</h2>
+            <p>Управление единицами измерения товаров</p>
+            <a href="{% url 'unit_list' %}" class="btn">Перейти</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-shopping-basket"></i>
+            <h2>Товары</h2>
+            <p>Управление ассортиментом магазина</p>
+            <a href="{% url 'product_list' %}" class="btn">Перейти</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-tractor"></i>
+            <h2>Фермеры</h2>
+            <p>Управление поставщиками продукции</p>
+            <a href="{% url 'farmer_list' %}" class="btn">Перейти</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-clipboard-check"></i>
+            <h2>Статусы заказов</h2>
+            <p>Управление статусами заказов</p>
+            <a href="{% url 'status_list' %}" class="btn">Перейти</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

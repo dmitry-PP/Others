@@ -1,0 +1,101 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block extra_styles %}
+<style>
+.page-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .detail-card i {
+            font-size: 2.5rem;
+            color: #d32f2f;
+            margin-bottom: 1rem;
+        }
+
+        .detail-card h2 {
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .detail-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+        .btn-delete {
+            background-color: #d32f2f;
+        }
+
+        .btn-delete:hover {
+            background-color: #b71c1c;
+        }
+</style>
+{% endblock extra_styles%}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Удаление: {{delete_title}}</h1>
+        <p class="hidden-text">{{ name }}</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="detail-card">
+        <i class="fas fa-trash-alt"></i>
+        <h2>Вы уверены, что хотите удалить данную запись"?</h2>
+        <p>Это действие необратимо.</p>
+        <form id="deleteForm" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete">Удалить</button>
+            <a href="{{back_url}}" class="btn">Назад</a>
+        </form>
+    </div>
+</div>
+<script>
+    const btn = document.getElementById("reset")
+    const form = document.getElementById("deleteForm")
+    form.action = window.location.pathname
+    btn.addEventListener('click',()=>history.back())
+
+</script>
+{% endblock content %}

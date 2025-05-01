@@ -1,0 +1,114 @@
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block extra_styles %}
+<style>
+
+        .page-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-card i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-card h2 {
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+
+        .dashboard-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+.add-btn {
+            display: block;
+            width: fit-content;
+            margin: 2rem auto;
+        }
+.back-btn {
+background-color: #93c194;
+            display: block;
+            width: fit-content;
+            margin: 10px auto;
+        }
+</style>
+{% endblock extra_styles%}
+
+
+{% block content %}
+ <section class="page-header">
+        <div class="container">
+            <h1>Категории товаров</h1>
+            <p>Просмотр и управление категориями</p>
+
+        </div>
+         <a href="{% url 'admin_panel' %}" class="btn back-btn">Назад</a>
+
+    </section>
+
+    <div class="container">
+        <a href="{% url 'category_new' %}" class="btn add-btn">Добавить новую категорию</a>
+        <div class="dashboard">
+            {% for category in categories %}
+            <div class="dashboard-card">
+                <i class="fas fa-list-alt"></i>
+                <h2 class="hidden-text">{{ category.name }}</h2>
+                <p>Категория товаров</p>
+                <a href="{{ category.get_absolute_url }}" class="btn">Просмотреть</a>
+            </div>
+            {% empty %}
+            <p>Категории отсутствуют.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content%}
