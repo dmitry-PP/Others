@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'products.apps.ProductsConfig',
     'crispy_forms',
-    "crispy_bootstrap4"
+    "crispy_bootstrap4",
+    "rest_framework"
 
 ]
 

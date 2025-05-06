@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LogoutView, LoginView
 from django.shortcuts import resolve_url
-from django.urls import path, reverse_lazy
-from . import views
+from django.urls import path, reverse_lazy, include
+from . import views, api
 
 urlpatterns = [
     path('', views.index, name="home"),
@@ -13,6 +13,8 @@ urlpatterns = [
     path('all-goods', views.all_goods, name="all_goods"),
     path('cart', views.basket_detail, name="cart"),
     path('order', views.order, name="order"),
+
+    path('api/', include(api.router.urls)),
 
     path('cart-add/<int:product_id>', views.basket_add, name="basket_add"),
     path('cart-update', views.update_cart, name="update_cart"),

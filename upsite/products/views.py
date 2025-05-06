@@ -64,7 +64,6 @@ def logout_view(request):
 def basket_detail(request):
     basket = Basket(request)
     items = list(basket)
-    print(items)
     total_price = basket.get_total_price()
 
     context = {
