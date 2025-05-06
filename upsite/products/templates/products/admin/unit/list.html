@@ -97,7 +97,9 @@ background-color: #93c194;
 </section>
 
 <div class="container">
-    <a href="{% url 'unit_new' %}" class="btn add-btn">Добавить новую единицу измерения</a>
+    {% if perms.products.add_unitofmeasurement  %}
+        <a href="{% url 'unit_new' %}" class="btn add-btn">Добавить новую единицу измерения</a>
+    {% endif %}
     <div class="dashboard">
         {% for unit in units %}
         <div class="dashboard-card">

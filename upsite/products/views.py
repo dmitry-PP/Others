@@ -1,12 +1,22 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.decorators.http import require_POST
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy, reverse
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
 
 from . import models
 from . import forms
 
 # Create your views here.
+from .basket import Basket
+from .forms import CustomUserCreationForm, OrderForm
+from .models import Product, Status, OrderItem
+
+
 def index(request):
     return render(request, "products/index.html", {"title": "Главная"})
 
@@ -28,11 +38,121 @@ def category(request):
 def all_goods(request):
     return render(request, "products/all_goods.html", {"title": "Все товары"})
 
-def cart(request):
-    return render(request, "products/cart.html", {"title": "Корзина"})
 
 def admin_panel(request):
     return render(request, "products/admin/index.html", {"title": "Админ Панель"})
+
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'products/forms/register.html', {'form': form})
+
+@login_required(login_url="login")
+def logout_view(request):
+    logout(request)
+    return redirect("login")
+
+
+@login_required(login_url="login")
+def basket_detail(request):
+    basket = Basket(request)
+    items = list(basket)
+    print(items)
+    total_price = basket.get_total_price()
+
+    context = {
+        'basket': basket,
+        'cart_items': items,
+        'total_price': total_price,
+        'total_items': len(basket),
+        'delivery_cost': 0 if total_price > 750 else 750,
+        'title': "Корзина"
+    }
+    return render(request, "products/cart.html", context)
+
+
+@login_required(login_url="login")
+def order(request):
+    basket = Basket(request)
+    if len(basket) == 0:
+        return redirect('cart')
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            # Создаем элементы заказа
+            order_items = []
+            for item in basket:
+                product = item['product']
+                order_item = OrderItem.objects.create(
+                    product=product,
+                    price=product.price,
+                    quantity=item['count']
+                )
+                order_items.append(order_item)
+
+            # Создаем заказ
+            order = form.save(commit=False)
+            order.user = request.user
+            order.order_item = order_items[0]  # Первый элемент заказа
+            order.status = Status.objects.get_or_create(name='В обработке')[0]
+            order.total_sum = basket.get_total_price()
+            order.save()
+
+            # Привязываем остальные элементы заказа
+            for item in order_items[1:]:
+                order.order_item.add(item)
+
+            # Очищаем корзину
+            basket.clear()
+
+            return redirect('home')
+    else:
+        form = OrderForm()
+
+    context = {
+        'form': form,
+        'basket': basket,
+        'delivery_cost': 0 if basket.get_total_price() > 750 else 750,
+        'total_price': basket.get_total_price(),
+    }
+    return render(request, 'products/order.html', context)
+
+@require_POST
+@login_required
+def update_cart(request):
+    product_id = request.POST.get('product_id')
+    action = request.POST.get('action')
+
+    product = get_object_or_404(Product, id=product_id)
+    basket = Basket(request)
+
+    if action == 'increase':
+        basket.add(product)
+    elif action == 'decrease' and basket.get(product):
+        if basket.get(product)["count"] > 1:
+            basket.add(product, -1)
+        else:
+            basket.remove(product)
+    elif action == 'remove':
+        basket.remove(product)
+
+    return JsonResponse({'success': True})
+
+@require_POST
+@login_required(login_url="login")
+def basket_add(request, product_id):
+    product = get_object_or_404(Product.objects.all(), pk=product_id)
+    Basket(request).add(product)
+    return redirect(reverse("product_detail", kwargs={"pk": product_id}))
+
 
 class DeleteGeneralView(DeleteView):
     template_name = 'products/admin/delete.html'
@@ -78,17 +198,21 @@ class CategoryCreateView(FormMixin, CreateView):
     success_url = reverse_lazy("category_list")
     action_name = "Добавить"
 
-class CategoryUpdateView(FormMixin, UpdateView):
+class CategoryUpdateView(PermissionRequiredMixin, FormMixin, UpdateView):
     model = models.Category
     form_class = forms.CategoryForm
     success_url = reverse_lazy("category_list")
     action_name = "Изменить"
+    permission_required = 'products.change_category'
 
-class CategoryDeleteView(DeleteGeneralView):
+
+class CategoryDeleteView(PermissionRequiredMixin, DeleteGeneralView):
     model = models.Category
     delete_title = "Категории"
     name_field_object = "name"
     prefix = "category"
+    permission_required = 'products.delete_category'
+
 
 # ___________________________________________
 
@@ -192,8 +316,23 @@ class ProductListView(ListView):
 
 class ProductDetailView(DetailView):
     model = models.Product
+    queryset = models.Product.objects.all()
     template_name = 'products/admin/product/detail.html'
     context_object_name = 'product'
+
+    def get(self, request, *args, **kwargs):
+        product = self.get_object()
+        product_in_cart = False
+
+        if request.user.is_authenticated and not (request.user.is_staff or request.user.is_superuser):
+            basket = Basket(request)
+            product_in_cart = (basket.get(product) is not None)
+
+        context = {
+            'product': product,
+            'product_in_cart': product_in_cart,
+        }
+        return self.render_to_response(context)
 
 class ProductCreateView(FormMixin, CreateView):
     model = models.Product

@@ -1,3 +1,33 @@
+<style>
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-btn {
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: 500;
+    border: 2px solid white;
+}
+
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+/* Для авторизованного пользователя - только кнопка выхода */
+.auth-buttons:has(a[href*="logout"]) {
+    min-width: 80px; /* Фиксированная ширина для одной кнопки */
+}
+</style>
+
 <header>
     <div class="container">
         <div class="header-top">
@@ -22,6 +52,14 @@
                     <li><a href="{% url 'cart' %}">Корзина</a></li>
                 </ul>
             </nav>
+            <div class="auth-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="auth-btn">Выход</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="auth-btn">Авторизация</a>
+                    <a href="{% url 'register' %}" class="auth-btn">Регистрация</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </header>

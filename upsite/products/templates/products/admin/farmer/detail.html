@@ -115,8 +115,10 @@
             <p><span class="label">Регистрационный номер:</span> <span class="value">{{ farmer.registration_number }}</span></p>
 
         </div>
-         <a href="{% url 'farmer_edit' farmer.id %}" class="btn">Изменить</a>
-         <a href="{% url 'farmer_delete' farmer.id %}" class="btn btn-delete">Удалить</a>
+         {% if request.user.is_staff %}
+             <a href="{% url 'farmer_edit' farmer.id %}" class="btn">Изменить</a>
+             <a href="{% url 'farmer_delete' farmer.id %}" class="btn btn-delete">Удалить</a>
+        {% endif %}
     </div>
     <a href="{% url 'farmer_list' %}" class="btn back-btn">Вернуться к списку</a>
 </div>

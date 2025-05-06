@@ -96,7 +96,9 @@ background-color: #93c194;
     </section>
 
     <div class="container">
-        <a href="{% url 'category_new' %}" class="btn add-btn">Добавить новую категорию</a>
+        {% if perms.products.add_category  %}
+            <a href="{% url 'category_new' %}" class="btn add-btn">Добавить новую категорию</a>
+        {% endif %}
         <div class="dashboard">
             {% for category in categories %}
             <div class="dashboard-card">

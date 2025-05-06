@@ -135,3 +135,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # crispy form
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+BASKET_SESSION_ID = 'basket'

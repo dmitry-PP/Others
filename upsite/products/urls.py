@@ -1,4 +1,6 @@
-from django.urls import path
+from django.contrib.auth.views import LogoutView, LoginView
+from django.shortcuts import resolve_url
+from django.urls import path, reverse_lazy
 from . import views
 
 urlpatterns = [
@@ -9,7 +11,15 @@ urlpatterns = [
     path('goods', views.goods, name="goods"),
     path('category', views.category, name="category"),
     path('all-goods', views.all_goods, name="all_goods"),
-    path('cart', views.cart, name="cart"),
+    path('cart', views.basket_detail, name="cart"),
+    path('order', views.order, name="order"),
+
+    path('cart-add/<int:product_id>', views.basket_add, name="basket_add"),
+    path('cart-update', views.update_cart, name="update_cart"),
+
+    path('login/', LoginView.as_view(template_name="products/forms/authorize.html",next_page="home"), name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('register/', views.register, name='register'),
 
     path('admin-panel', views.admin_panel, name="admin_panel"),
 

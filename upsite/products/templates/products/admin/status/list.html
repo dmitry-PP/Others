@@ -97,7 +97,9 @@ background-color: #93c194;
 </section>
 
 <div class="container">
-    <a href="{% url 'status_new' %}" class="btn add-btn">Добавить новый статус заказа</a>
+    {% if perms.products.add_status  %}
+        <a href="{% url 'status_new' %}" class="btn add-btn">Добавить новый статус заказа</a>
+    {% endif %}
     <div class="dashboard">
         {% for status in statuses %}
         <div class="dashboard-card">

@@ -16,82 +16,106 @@
 <div class="container">
     <div class="cart-container">
         <div class="cart-items">
-            <div class="cart-item">
-                <div class="cart-item-img"
-                     style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812388d1f4');"></div>
-                <div class="cart-item-info">
-                    <h3>Яблоки Гала</h3>
-                    <p>Сочные сладкие яблоки, 1 кг</p>
-                    <span class="cart-item-price">120 ₽</span>
-                </div>
-                <div class="cart-item-controls">
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <input type="text" class="quantity-input" value="2" readonly>
-                        <button class="quantity-btn">+</button>
+            {% if cart_items %}
+                {% for item in cart_items %}
+                <div class="cart-item" data-product-id="{{ item.product.id }}">
+                    <div class="cart-item-img"
+                         style="background-image: url('{{ item.product.image.url }}');"></div>
+                    <div class="cart-item-info">
+                        <h3>{{ item.product.name }}</h3>
+                        <p>{{ item.product.description }}</p>
+                        <span class="cart-item-price">{{ item.product.price }} ₽</span>
                     </div>
-                    <button class="remove-btn">
-                        <i class="fas fa-trash-alt"></i> Удалить
-                    </button>
-                </div>
-            </div>
-            <div class="cart-item">
-                <div class="cart-item-img"
-                     style="background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb');"></div>
-                <div class="cart-item-info">
-                    <h3>Авокадо Хасс</h3>
-                    <p>Спелые авокадо, 1 шт</p>
-                    <span class="cart-item-price">200 ₽</span>
-                </div>
-                <div class="cart-item-controls">
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <input type="text" class="quantity-input" value="1" readonly>
-                        <button class="quantity-btn">+</button>
+                    <div class="cart-item-controls">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus-btn" data-product-id="{{ item.product.id }}">-</button>
+                            <input type="text" class="quantity-input" value="{{ item.count }}" readonly>
+                            <button class="quantity-btn plus-btn" data-product-id="{{ item.product.id }}">+</button>
+                        </div>
+                        <button class="remove-btn" data-product-id="{{ item.product.id }}">
+                            <i class="fas fa-trash-alt"></i> Удалить
+                        </button>
                     </div>
-                    <button class="remove-btn">
-                        <i class="fas fa-trash-alt"></i> Удалить
-                    </button>
                 </div>
-            </div>
-            <div class="cart-item">
-                <div class="cart-item-img"
-                     style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655');"></div>
-                <div class="cart-item-info">
-                    <h3>Хлеб цельнозерновой</h3>
-                    <p>Свежий хлеб, 500 г</p>
-                    <span class="cart-item-price">65 ₽</span>
+                {% endfor %}
+            {% else %}
+                <div class="empty-cart">
+                    <p>Ваша корзина пуста</p>
+                    <a href="{% url 'product_list' %}" class="btn">Перейти к покупкам</a>
                 </div>
-                <div class="cart-item-controls">
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <input type="text" class="quantity-input" value="1" readonly>
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="remove-btn">
-                        <i class="fas fa-trash-alt"></i> Удалить
-                    </button>
-                </div>
-            </div>
+            {% endif %}
         </div>
 
+        {% if cart_items %}
         <div class="cart-summary">
             <h3 class="summary-title">Итого</h3>
             <div class="summary-row">
-                <span>Товары (4)</span>
-                <span>505 ₽</span>
+                <span>Товары ({{ total_items }})</span>
+                <span>{{ total_price }} ₽</span>
             </div>
             <div class="summary-row">
                 <span>Доставка</span>
-                <span>Бесплатно</span>
+                <span>
+                    {% if delivery_cost == 0 %}
+                        Бесплатно
+                    {% else %}
+                        {{delivery_cost}} ₽
+                    {% endif %}
+                </span>
             </div>
             <div class="summary-row summary-total">
                 <span>К оплате</span>
-                <span>505 ₽</span>
+                <span>{{ total_price|add:delivery_cost }} ₽</span>
             </div>
-            <button class="btn">Оформить заказ</button>
-            <a href="products.html" class="btn btn-outline">Продолжить покупки</a>
+            <a href="{% url 'order' %}" class="btn">Оформить заказ</a>
         </div>
+        {% endif %}
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Обработка увеличения количества
+    $('.plus-btn').click(function() {
+        const productId = $(this).data('product-id');
+        updateCart(productId, 'increase');
+    });
+
+    // Обработка уменьшения количества
+    $('.minus-btn').click(function() {
+        const productId = $(this).data('product-id');
+        updateCart(productId, 'decrease');
+    });
+
+    // Обработка удаления товара
+    $('.remove-btn').click(function() {
+        const productId = $(this).data('product-id');
+        if(confirm('Вы уверены, что хотите удалить товар из корзины?')) {
+            updateCart(productId, 'remove');
+        }
+    });
+
+    function updateCart(productId, action) {
+        $.ajax({
+            url: '{% url "update_cart" %}',
+            type: 'POST',
+            data: {
+                'product_id': productId,
+                'action': action,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                if(response.success) {
+                    location.reload(); // Обновляем страницу после изменения
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+                alert('Произошла ошибка при обновлении корзины');
+            }
+        });
+    }
+});
+</script>
 {% endblock content %}

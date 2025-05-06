@@ -43,7 +43,6 @@ class Category(models.Model):
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
 
-
 class UnitOfMeasurement(models.Model):
     name = models.CharField(max_length=10, unique=True, verbose_name="Единица измерения")
 
@@ -56,7 +55,6 @@ class UnitOfMeasurement(models.Model):
     class Meta:
         verbose_name = "Единица измерения"
         verbose_name_plural = "Единицы измерения"
-
 
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name="Название")
@@ -103,7 +101,6 @@ class Product(models.Model):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
 
-
 class Status(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Название статуса")
 
@@ -116,7 +113,6 @@ class Status(models.Model):
     class Meta:
         verbose_name = "Статус"
         verbose_name_plural = "Статусы"
-
 
 class OrderItem(models.Model):
     price = models.DecimalField(
@@ -142,7 +138,6 @@ class OrderItem(models.Model):
         verbose_name = "Элемент заказа"
         verbose_name_plural = "Элементы заказа"
 
-
 class Order(models.Model):
     user = models.ForeignKey(
         get_user_model(),
@@ -155,6 +150,8 @@ class Order(models.Model):
         verbose_name="Элемент заказа"
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    comment = models.TextField(null=True, blank=True, verbose_name="Комментарий")
+    fio = models.CharField(max_length=100, verbose_name="ФИО")
     delivery_date = models.DateTimeField(verbose_name="Дата доставки")
     address = models.TextField(verbose_name="Адрес доставки")
     status = models.ForeignKey(
@@ -171,7 +168,6 @@ class Order(models.Model):
     class Meta:
         verbose_name = "Заказ"
         verbose_name_plural = "Заказы"
-
 
 class Cart(models.Model):
     quantity = models.PositiveIntegerField(
@@ -198,7 +194,6 @@ class Cart(models.Model):
     class Meta:
         verbose_name = "Корзина"
         verbose_name_plural = "Корзины"
-
 
 class Review(models.Model):
     rating = models.PositiveSmallIntegerField(
