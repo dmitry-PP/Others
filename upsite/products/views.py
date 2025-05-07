@@ -36,7 +36,7 @@ def category(request):
     return render(request, "products/category.html", {"title": "Категории"})
 
 def all_goods(request):
-    return render(request, "products/all_goods.html", {"title": "Все товары"})
+    return render(request, "products/admin/product/list.html", {"title": "Все товары","products":Product.objects.all()})
 
 
 def admin_panel(request):
