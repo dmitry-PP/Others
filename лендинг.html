@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продуктовый магазин - Свежие продукты с доставкой</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif;
+        }
+        .gradient-btn {
+            background: linear-gradient(45deg, #FF6F61, #FFB88C);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gradient-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+        }
+        .parallax-img {
+            transition: transform 0.5s ease;
+        }
+        .parallax-img:hover {
+            transform: translateY(-10px);
+        }
+        .frosted-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .frosted-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        .frosted-glass:hover::before {
+            left: 100%;
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 111, 97, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 111, 97, 0);
+            }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .chart-bar {
+            transform-origin: bottom;
+            transform: scaleY(0);
+            animation: grow 1.5s ease-in-out forwards;
+        }
+        @keyframes grow {
+            to { transform: scaleY(1); }
+        }
+        .chart-circle {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            animation: draw-circle 1.5s ease-in-out forwards;
+        }
+        @keyframes draw-circle {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="min-h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
+        <div class="frosted-glass" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-5xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">
+                Начни заказывать свежие продукты уже сегодня!
+            </h1>
+            <p class="text-xl mb-8">
+                Практичная доставка от фермеров за 2 часа.
+            </p>
+            <a href="#order" class="gradient-btn text-white font-semibold py-3 px-8 rounded-full text-lg inline-block pulse">
+                Заказать сейчас
+            </a>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div data-aos="fade-right" data-aos-duration="1000" class="text-center">
+                <div class="bg-gradient-to-br from-orange-500 to-pink-500 w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center parallax-img">
+                    <svg class="w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M12 8v4m0 0l-3-3m3 3l3-3"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Свежие продукты</h3>
+                <p>Прямые поставки от локальных фермеров.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000" class="text-center">
+                <div class="bg-gradient-to-br from-green-500 to-teal-400 w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center parallax-img">
+                    <svg class="w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Быстрая доставка</h3>
+                <p>Доставим ваш заказ за 2 часа.</p>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" class="text-center">
+                <div class="bg-gradient-to-br from-blue-500 to-purple-500 w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center parallax-img">
+                    <svg class="w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <path d="M3 6h18"/>
+                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Эко-упаковка</h3>
+                <p>Забота об экологии в каждом заказе.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 px-4 bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Наши достижения</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <svg class="w-32 h-32 mx-auto mb-4" viewBox="0 0 100 100">
+                        <rect x="20" y="60" width="20" height="0" fill="#FF6F61" class="chart-bar" style="animation-delay: 0.2s; height: 40px;"></rect>
+                        <rect x="50" y="40" width="20" height="0" fill="#FFB88C" class="chart-bar" style="animation-delay: 0.4s; height: 60px;"></rect>
+                        <rect x="80" y="20" width="20" height="0" fill="#FF6F61" class="chart-bar" style="animation-delay: 0.6s; height: 80px;"></rect>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Рост клиентов</h3>
+                    <p class="text-gray-300">Более 10 000 новых клиентов за последний год.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <svg class="w-32 h-32 mx-auto mb-4" viewBox="0 0 100 100">
+                        <rect x="20" y="50" width="15" height="0" fill="#FF6F61" class="chart-bar" style="animation-delay: 0.2s; height: 50px;"></rect>
+                        <rect x="45" y="30" width="15" height="0" fill="#FFB88C" class="chart-bar" style="animation-delay: 0.4s; height: 70px;"></rect>
+                        <rect x="70" y="10" width="15" height="0" fill="#FF6F61" class="chart-bar" style="animation-delay: 0.6s; height: 90px;"></rect>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Объем доставок</h3>
+                    <p class="text-gray-300">Ежемесячно доставляем 50 000+ заказов.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <svg class="w-32 h-32 mx-auto mb-4" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#FFB88C" stroke-width="10" class="chart-circle" style="animation-delay: 0.2s;"></circle>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6F61" stroke-width="10" stroke-dasharray="200 283" style="animation: none;"></circle>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Экологический вклад</h3>
+                    <p class="text-gray-300">70% упаковки — биоразлагаемые материалы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Info Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                <svg class="w-full max-w-md mx-auto floating" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 7h-12l-2-2h-6v2h2l2 2h12v-2z" fill="url(#truckGradient)"/>
+                    <path d="M2 7h20v10h-2m-2 0h-12m-2 0h-2v-10"/>
+                    <circle cx="6" cy="18" r="2"/>
+                    <circle cx="18" cy="18" r="2"/>
+                    <defs>
+                        <linearGradient id="truckGradient" x1="0" y1="0" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF6F61"/>
+                            <stop offset="100%" style="stop-color:#FFB88C"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                <h2 class="text-3xl font-bold mb-6">Быстрая и удобная доставка</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-2 rounded-full mr-4">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Доставка за 2 часа</h3>
+                            <p class="text-gray-300">Быстро привезем ваши покупки в удобное время</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-2 rounded-full mr-4">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Бесплатная доставка</h3>
+                            <p class="text-gray-300">При заказе от 2000 рублей</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-r from-orange-500 to-pink-500 p-2 rounded-full mr-4">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Курьер позвонит</h3>
+                            <p class="text-gray-300">Перед доставкой, чтобы согласовать детали</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Почему выбирают нас</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div data-aos="fade-right" class="p-6 bg-gray-800 rounded-lg frosted-glass">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 rounded-full mr-4" viewBox="0 0 24 24" fill="url(#userGradient1)">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            <defs>
+                                <linearGradient id="userGradient1" x1="0" y1="0" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FF6F61"/>
+                                    <stop offset="100%" style="stop-color:#FFB88C"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            <p class="font-semibold">Анна, 32 года</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Лучший сервис! Продукты всегда свежие, доставка быстрая! Особенно нравятся органические овощи - вкус как из детства."</p>
+                </div>
+                <div data-aos="fade-left" class="p-6 bg-gray-800 rounded-lg frosted-glass">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 rounded-full mr-4" viewBox="0 0 24 24" fill="url(#userGradient2)">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            <defs>
+                                <linearGradient id="userGradient2" x1="0" y1="0" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FF6F61"/>
+                                    <stop offset="100%" style="stop-color:#FFB88C"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            <p class="font-semibold">Михаил, 28 лет</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Заказываю каждую неделю, экономлю время и деньги! Мясо всегда свежее, молочные продукты с отличным сроком годности."</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center" data-aos="fade-up">
+                <div class="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full">
+                    <p class="font-bold">Более 10 000 довольных клиентов!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA and Form Section -->
+    <section id="order" class="py-16 px-4 text-center bg-gray-800">
+        <div class="max-w-md mx-auto frosted-glass" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Готовы сделать заказ?</h2>
+            <p class="mb-8">Оставьте заявку, и мы свяжемся с вами!</p>
+            <form class="space-y-4">
+                <input type="text" placeholder="Ваше имя" class="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:outline-none">
+                <input type="tel" placeholder="Ваш телефон" class="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:outline-none">
+                <textarea placeholder="Ваш заказ (необязательно)" class="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:outline-none" rows="3"></textarea>
+                <button type="button" class="gradient-btn w-full py-3 rounded-full text-lg font-semibold">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Trust Elements Section -->
+    <section class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div data-aos="zoom-in">
+                <div class="bg-gray-800 p-6 rounded-lg h-full">
+                    <div class="bg-gradient-to-r from-orange-500 to-pink-500 w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Сертифицированные фермеры</h3>
+                    <p class="text-gray-300">Работаем только с проверенными поставщиками</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <div class="bg-gray-800 p-6 rounded-lg h-full">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-400 w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Эко-сертификаты</h3>
+                    <p class="text-gray-300">Все продукты соответствуют экологическим стандартам</p>
+                </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <div class="bg-gray-800 p-6 rounded-lg h-full">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Гарантия качества</h3>
+                    <p class="text-gray-300">Если вам что-то не понравится - вернем деньги</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Часто задаваемые вопросы</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-700 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full p-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold">Как быстро осуществляется доставка?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-300">Мы осуществляем доставку в течение 2 часов после оформления заказа. Время доставки может немного увеличиться в пиковые часы или при сложных погодных условиях.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="w-full p-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold">Какие способы оплаты вы принимаете?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-300">Вы можете оплатить заказ наличными курьеру, банковской картой при оформлении заказа или через онлайн-платежи (Сбербанк Онлайн, Тинькофф, Яндекс.Деньги и другие).</p>
+                    </div>
+                </div>
+                <div class="bg-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full p-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-semibold">Могу ли я вернуть товар?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-300">Да, вы можете вернуть товар в течение 24 часов после получения, если он не соответствует описанию или имеет недостатки. Мы вернем вам деньги или заменим товар.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Social Links -->
+    <footer class="py-12 px-4 bg-black text-center">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="social-icon text-gray-400 hover:text-orange-500 text-2xl" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="#" class="social-icon text-gray-400 hover:text-orange-500 text-2xl" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-icon text-gray-400 hover:text-orange-500 text-2xl" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon text-gray-400 hover:text-orange-500 text-2xl" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-left">
+                <div data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-4">Контакты</h3>
+                    <p class="mb-2"><i class="fas fa-phone-alt mr-2 text-orange-500"></i> +7 (123) 456-78-90</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2 text-orange-500"></i> info@freshfood.ru</p>
+                    <p><i class="fas fa-map-marker-alt mr-2 text-orange-500"></i> г. Москва, ул. Примерная, 123</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold mb-4">Часы работы</h3>
+                    <p class="mb-2">Пн-Пт: 8:00 - 22:00</p>
+                    <p class="mb-2">Сб-Вс: 9:00 - 21:00</p>
+                    <p>Доставка: круглосуточно</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-semibold mb-4">Подписаться на рассылку</h3>
+                    <div class="flex">
+                        <input type="email" placeholder="Ваш email" class="p-2 rounded-l bg-gray-800 text-white w-full focus:outline-none">
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-4 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Узнавайте первыми о новых продуктах и акциях</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p>© 2025 FreshFood. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.bg-gray-700 button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Add floating animation to elements with class 'floating'
+        const floatingElements = document.querySelectorAll('.floating');
+        floatingElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.2}s`;
+        });
+    </script>
+</body>
+</html>
